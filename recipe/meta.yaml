@@ -11,6 +11,9 @@ source:
 build:
   number: 1
   skip: True  # [win]
+  run_exports:
+    # no ABI lab entry.  Going with minor pinning based on past conda-forge pinning.
+    - {{ pin_subpackage('libdap4', max_pin='x.x') }}
 
 requirements:
   build:
@@ -19,12 +22,11 @@ requirements:
     - libtool
     - flex
     - bison
-    - libxml2 2.9.*
-    - curl >=7.44.0,<8
+    - libxml2
+    - libcurl
     - util-linux  # [linux]
+    - {{ compiler('c') }}
   run:
-    - libxml2 2.9.*
-    - curl >=7.44.0,<8
     - util-linux  # [linux]
 
 test:
@@ -44,3 +46,4 @@ extra:
     - aleksandervines
     - jakirkham
     - ocefpaf
+    - msarahan
