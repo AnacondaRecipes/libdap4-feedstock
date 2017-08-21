@@ -10,8 +10,11 @@ source:
   sha256: 226ac2ab3167dab02d35111969c1ae31bb014cf738a1531f4cb42cb8509381cd
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
+  run_exports:
+    # no ABI lab entry.  Going with minor pinning based on past conda-forge pinning.
+    - {{ pin_subpackage('libdap4', max_pin='x.x') }}
 
 requirements:
   build:
@@ -20,11 +23,15 @@ requirements:
     - libtool
     - flex
     - bison
-    - libxml2 2.9.*
+    - libxml2
     - curl
     - util-linux  # [linux]
+    - {{ compiler('c') }}
   run:
-    - libxml2 2.9.*
+    # libxml2 removed here because package has run_exports for itself
+    #    https://github.com/AnacondaRecipes/libxml2-feedstock/pull/2
+    # this req isn't actually necessary, as run_exports will add it.  Left here for reference.
+    # - libxml2 2.9.*
     - curl
     - util-linux  # [linux]
 
@@ -45,3 +52,4 @@ extra:
     - aleksandervines
     - jakirkham
     - ocefpaf
+    - msarahan
