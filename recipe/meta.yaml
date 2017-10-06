@@ -26,6 +26,9 @@ requirements:
     - libcurl
     - util-linux  # [linux]
     - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - libxml2
   run:
     - util-linux  # [linux]
 
