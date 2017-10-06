@@ -23,10 +23,12 @@ requirements:
     - libtool
     - flex
     - bison
-    - libxml2
     - curl
     - util-linux  # [linux]
     - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - libxml2
   run:
     # libxml2 removed here because package has run_exports for itself
     #    https://github.com/AnacondaRecipes/libxml2-feedstock/pull/2
