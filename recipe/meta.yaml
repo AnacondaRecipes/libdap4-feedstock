@@ -29,6 +29,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - libxml2
+    - libuuid
   run:
     - util-linux  # [linux]
 
