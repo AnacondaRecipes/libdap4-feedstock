@@ -29,6 +29,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - libxml2
+    - libuuid
   run:
     # libxml2 removed here because package has run_exports for itself
     #    https://github.com/AnacondaRecipes/libxml2-feedstock/pull/2
