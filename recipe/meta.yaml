@@ -9,7 +9,7 @@ source:
   sha256: 9798d7ed066c9560ecb22a7f1eb15a31bb1c506b37060648963d91f4d4e71fe6
 
 build:
-  number: 1
+  number: 2
   skip: True  # [win]
   run_exports:
     # no ABI lab entry.  Going with minor pinning based on past conda-forge pinning.
@@ -20,16 +20,15 @@ requirements:
     - automake
     - autoconf
     - libtool
-    - flex
     - bison
-    - libxml2
-    - libcurl
     - util-linux  # [linux]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
+    - libcurl
     - libxml2
     - libuuid
+    - flex
   run:
     - util-linux  # [linux]
 
