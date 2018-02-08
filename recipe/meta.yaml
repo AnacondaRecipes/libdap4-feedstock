@@ -21,11 +21,11 @@ requirements:
     - automake
     - autoconf
     - libtool
+    - flex
     - bison
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - libcurl
     - libxml2
     - libuuid
     - libcurl
