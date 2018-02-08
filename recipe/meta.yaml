@@ -22,22 +22,24 @@ requirements:
     - autoconf
     - libtool
     - bison
-    - util-linux  # [linux]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - libcurl
     - libxml2
     - libuuid
+    - libcurl
     - flex
   run:
-    - util-linux  # [linux]
+    # libxml2 removed here because package has run_exports for itself
+    #    https://github.com/AnacondaRecipes/libxml2-feedstock/pull/2
+    # this req isn't actually necessary, as run_exports will add it.  Left here for reference.
+    # - libxml2 2.9.*
+    - curl
 
 test:
   commands:
     - dap-config --version
-    - conda inspect linkages -p $PREFIX libdap4  # [not win]
-    - conda inspect objects -p $PREFIX libdap4  # [osx]
 
 about:
   home: http://www.opendap.org
