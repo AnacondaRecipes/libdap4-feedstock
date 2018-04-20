@@ -29,12 +29,6 @@ requirements:
     - libuuid
     - libcurl
     - flex
-  run:
-    # libxml2 removed here because package has run_exports for itself
-    #    https://github.com/AnacondaRecipes/libxml2-feedstock/pull/2
-    # this req isn't actually necessary, as run_exports will add it.  Left here for reference.
-    # - libxml2 2.9.*
-    - curl
 
 test:
   commands:
