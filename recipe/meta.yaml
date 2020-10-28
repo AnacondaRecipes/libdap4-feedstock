@@ -1,4 +1,4 @@
-{% set version = "3.19.1" %}
+{% set version = "hyrax-1.16.2" %}
 
 package:
   name: libdap4
@@ -7,7 +7,7 @@ package:
 source:
   fn: libdap4-{{ version }}.tar.gz
   url: https://github.com/OPENDAP/libdap4/archive/version-{{ version }}.tar.gz
-  sha256: 487c86ad95b45a83e9f0fc09b69107f6b035d7373c2a7a717532b6e31b1cb6ee
+  sha256: d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed
 
 build:
   number: 0
