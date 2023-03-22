@@ -14,8 +14,5 @@ bash configure --prefix=${PREFIX} \
                --enable-threads=pth
 
 make -j${CPU_COUNT} ${VERBOSE_AT}
-# Check fails on OS X for some reason.
-if [ $(uname) != Linux ]; then
-    make check
-fi
+make check
 make install

@@ -24,6 +24,7 @@ requirements:
     - bison
     - flex
     - libtool
+    - make
   host:
     - flex
     - libcurl
