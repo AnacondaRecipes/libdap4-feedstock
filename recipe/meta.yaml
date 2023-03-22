@@ -40,6 +40,9 @@ requirements:
 test:
   commands:
     - dap-config --version
+    - test -f ${PREFIX}/lib/libdap${SHLIB_EXT}
+    - test -f ${PREFIX}/lib/libdapclient${SHLIB_EXT}
+    - test -f ${PREFIX}/lib/libdapserver${SHLIB_EXT}
 
 about:
   home: https://www.opendap.org/
